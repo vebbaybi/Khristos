@@ -1,4 +1,46 @@
 {
+  "skills_network": {
+    "nodes": [
+      {"id": "Favour Iloba", "group": "Core", "level": 1, "skill": 100},
+      {"id": "Communication", "group": "Core", "level": 2, "skill": 85},
+
+      {"id": "Penetration Testing", "group": "Offensive", "level": 2, "skill": 90},
+      {"id": "Ethical Hacking", "group": "Offensive", "level": 2, "skill": 90},
+      {"id": "Vulnerability Assessment", "group": "Offensive", "level": 2, "skill": 85},
+      {"id": "Nmap", "group": "Offensive", "level": 3, "skill": 80},
+      
+      {"id": "Incident Response", "group": "Defensive", "level": 2, "skill": 95},
+      {"id": "Threat Intelligence", "group": "Defensive", "level": 2, "skill": 85},
+      {"id": "Digital Forensics", "group": "Defensive", "level": 2, "skill": 75},
+      {"id": "Wireshark", "group": "Defensive", "level": 3, "skill": 80},
+      {"id": "Autopsy", "group": "Defensive", "level": 3, "skill": 70},
+
+      {"id": "Python Scripting", "group": "Cloud", "level": 2, "skill": 95},
+      {"id": "Automation & AI", "group": "Cloud", "level": 2, "skill": 85},
+      {"id": "Linux/Bash", "group": "Cloud", "level": 2, "skill": 90},
+      {"id": "Network Fundamentals", "group": "Cloud", "level": 2, "skill": 80}
+    ],
+    "links": [
+      {"source": "Penetration Testing", "target": "Favour Iloba", "value": 5},
+      {"source": "Incident Response", "target": "Favour Iloba", "value": 5},
+      {"source": "Python Scripting", "target": "Favour Iloba", "value": 6},
+      {"source": "Communication", "target": "Favour Iloba", "value": 4},
+      
+      {"source": "Penetration Testing", "target": "Ethical Hacking", "value": 5},
+      {"source": "Vulnerability Assessment", "target": "Nmap", "value": 4},
+      {"source": "Ethical Hacking", "target": "Linux/Bash", "value": 6}, 
+      
+      {"source": "Incident Response", "target": "Threat Intelligence", "value": 5},
+      {"source": "Digital Forensics", "target": "Autopsy", "value": 4},
+      {"source": "Digital Forensics", "target": "Wireshark", "value": 3},
+      
+      {"source": "Python Scripting", "target": "Automation & AI", "value": 7}, 
+      {"source": "Python Scripting", "target": "Threat Intelligence", "value": 4},
+      {"source": "Network Fundamentals", "target": "Wireshark", "value": 5},
+      {"source": "Network Fundamentals", "target": "Incident Response", "value": 4},
+      {"source": "Python Scripting", "target": "Nmap", "value": 5}
+    ]
+  },
   "recon": {
     "intel": [
       {
