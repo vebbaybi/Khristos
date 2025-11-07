@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en" data-app="cybersec-portfolio" data-page="cybersec" data-version="v1.1">
+
+<head>
+    <!-- Required meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; connect-src 'self' https://khristos.github.io;" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-title" content="Cybersec Portfolio" />
+    <meta name="google" content="notranslate" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Primary SEO -->
+    <title>Favour Iloba — Cybersecurity Portfolio | Incident-driven Scrollytelling</title>
+    <meta name="description"
+        content="Explore Favour Iloba's cybersecurity portfolio: a single-page scrollytelling site narrating a cyber incident from reconnaissance to lessons learned. Evidence-based skills in threat detection, forensics, and response. Printable CV included." />
+    <meta name="keywords"
+        content="cybersecurity portfolio, incident response, threat detection, digital forensics, SOC analyst, Nmap, Wireshark, Autopsy, NIST, MITRE ATT&CK, Favour Iloba" />
+    <meta name="author" content="Favour Iloba" />
+    <link rel="canonical" href="https://khristos.github.io/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Favour Iloba — Cybersecurity Portfolio" />
+    <meta property="og:description"
+        content="One page. One CSS. One JS. A full security lifecycle with mapped skills, artifacts, and credentials in an incident-driven narrative." />
+    <meta property="og:url" content="https://khristos.github.io/" />
+    <meta property="og:image" content="https://khristos.github.io/assets/gif/logo.gif" />
+    <meta property="og:image:alt" content="Cybersecurity Portfolio Cover" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="KHRisTOS Cybersecurity Portfolio" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Favour Iloba — Cybersecurity Portfolio" />
+    <meta name="twitter:description"
+        content="Evidence-first portfolio narrated through an incident timeline. SOC log views, forensics, and AAR included. Skills: Network defense, vulnerability scanning, incident response." />
+    <meta name="twitter:image" content="https://khristos.github.io/assets/gif/logo.gif" />
+    <meta name="twitter:image:alt" content="Cybersecurity Portfolio Cover" />
+    <meta name="twitter:site" content="@yourtwitterhandle" />
+    <meta name="twitter:creator" content="@yourtwitterhandle" />
+
+    <!-- App and theming / PWA -->
+    <meta name="application-name" content="Cybersec Portfolio" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b0f14" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0f14" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Icons -->
+    <link rel="icon" href="/assets/gif/logo.gif" type="image/svg+xml" />
+    <link rel="icon" href="/assets/gif/logo.gif" sizes="32x32" />
+    <link rel="icon" href="/assets/gif/logo.gif" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/assets/gif/logo.gif" sizes="180x180" />
+    <link rel="mask-icon" href="/assets/gif/logo.gif" color="#0b0f14" />
+
+    <!-- Preload critical assets -->
+    <link rel="preload" as="style" href="/assets/styles/main.css" />
+    <link rel="preload" as="style" href="/assets/styles/wtl.css" />
+    <link rel="preload" as="script" href="/assets/scripts/main.js" />
+    <link rel="preload" as="script" href="/assets/scripts/wtl.js" />
+    <link rel="preload" as="fetch" href="/assets/json/cybersec.json" crossorigin="anonymous" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+    <link rel="stylesheet" href="/assets/styles/wtl.css" />
+
+    <!-- Alternate representations -->
+    <link rel="alternate" type="application/pdf" href="/assets/FAVOUR-ILOBA-RESUME.pdf" title="Resume PDF" />
+
+    <!-- Structured Data (site is independent; no the1807.xyz affiliation in this context) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Favour Iloba",
+    "jobTitle": "Cybersecurity Analyst",
+    "url": "https://khristos.github.io/",
+    "image": "https://khristos.github.io/assets/og/cybersec-cover.png",
+    "sameAs": [
+      "https://github.com/khristos",
+      "https://www.linkedin.com/in/favour-iloba"
+    ],
+    "knowsAbout": [
+      "Cybersecurity", "Incident Response", "Threat Detection",
+      "Digital Forensics", "Network Defense", "Vulnerability Scanning",
+      "NIST Framework", "MITRE ATT&CK"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Site Header -->
+    <header class="site-header" role="banner">
+        <div class="site-header__inner">
+            <!-- Logo and Site Name -->
+            <div class="site-header__brand">
+                <img src="assets/gif/logo.gif" alt="KHRisTOS Logo" class="site-header__logo" width="40" height="40" />
+                <span class="site-header__name">KHRisTOS</span>
+            </div>
+
+            <!-- Header Controls -->
+            <div class="site-header__controls">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
+                    <img src="assets/gif/theme.gif" alt="Theme toggle" class="theme-toggle__icon" width="24"
+                        height="24" />
+                </button>
+
+                <!-- Navigation Toggle -->
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                    aria-controls="nav-dropdown">
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Dropdown -->
+    <aside class="nav-dropdown" id="nav-dropdown" aria-label="Main navigation" aria-hidden="true">
+        <nav class="nav-dropdown__inner" role="navigation">
+            <ul class="nav-dropdown__list">
+                <li class="nav-dropdown__item"><a href="#recon" class="nav-dropdown__link">Reconnaissance</a></li>
+                <li class="nav-dropdown__item"><a href="#exploit" class="nav-dropdown__link">Exploit &amp; Access</a>
+                </li>
+                <li class="nav-dropdown__item"><a href="#detect" class="nav-dropdown__link">Detection</a></li>
+                <li class="nav-dropdown__item"><a href="#respond" class="nav-dropdown__link">Response</a></li>
+                <li class="nav-dropdown__item"><a href="#forensics" class="nav-dropdown__link">Forensics</a></li>
+                <li class="nav-dropdown__item"><a href="#lessons" class="nav-dropdown__link">Lessons Learned</a></li>
+                <li class="nav-dropdown__item"><a href="#credentials" class="nav-dropdown__link">Credentials</a></li>
+                <li class="nav-dropdown__item"><a href="#projects" class="nav-dropdown__link">Projects</a></li>
+                <li class="nav-dropdown__item"><a href="#contact" class="nav-dropdown__link">Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Header / Hero -->
+    <header id="hero" class="hero" role="banner" aria-label="Portfolio hero">
+        <div class="hero__inner">
+            <canvas id="matrix-bg" class="matrix-bg"></canvas>
+            <img src="assets/images/khristos.jpg" alt="Favour Iloba - Cybersecurity Analyst" class="profile-avatar"
+                width="150" height="150" loading="lazy" />
+
+            <!-- WTL target: hero headline -->
+            <h1 class="hero__title wtl" data-wtl-key="hero" aria-live="polite">
+                Threat driven. Evidence first.
+            </h1>
+
+            <!-- Optional WTL target: hero subline -->
+            <p class="hero__tagline wtl" data-wtl-key="hero-sub" aria-live="polite">
+                A single-page cyber story from probe to post-incident.
+            </p>
+
+            <div class="hero__actions" role="group" aria-label="Primary actions">
+                <a class="btn btn-primary" href="/assets/FAVOUR-ILOBA-RESUME.pdf" download>Download Resume</a>
+                <a class="btn btn-ghost" href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <!-- Sticky stage overview -->
+        <nav class="stage-nav" aria-label="Incident stages">
+            <ul>
+                <li><a href="#recon">Recon</a></li>
+                <li><a href="#exploit">Exploit</a></li>
+                <li><a href="#detect">Detect</a></li>
+                <li><a href="#respond">Respond</a></li>
+                <li><a href="#forensics">Forensics</a></li>
+                <li><a href="#lessons">Lessons</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="main" role="main">
+        <!-- Scrollytelling shell: sticky panel + flowing narrative -->
+        <section class="stage" id="recon" data-stage="recon" aria-labelledby="recon-title">
+            <div class="stage__sticky" aria-hidden="true">
+                <div class="panel" data-panel="recon">
+                    <!-- WTL target: panel title -->
+                    <h2 class="panel__title wtl" data-wtl-key="recon">Recon</h2>
+                    <div class="intel-cards" id="intel-cards" aria-live="polite" aria-busy="false"></div>
+                    <div class="tool-badges" id="recon-tools"></div>
+                </div>
+            </div>
+            <div class="stage__flow">
+                <h2 id="recon-title" class="visually-hidden">Recon narrative</h2>
+                <article class="story" data-story="recon">
+                    <p class="story__lead">External footprint mapped. Hosts identified. Services fingerprinted. Findings
+                        routed to the exploit queue.</p>
+                    <ul class="key-points" id="recon-points"></ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="stage" id="exploit" data-stage="exploit" aria-labelledby="exploit-title">
+            <div class="stage__sticky" aria-hidden="true">
+                <div class="panel" data-panel="exploit">
+                    <!-- WTL target: panel title -->
+                    <h2 class="panel__title wtl" data-wtl-key="exploit">Exploit and Access</h2>
+                    <div class="attack-chain" id="attack-chain" role="img" aria-label="Attack chain diagram"></div>
+                </div>
+            </div>
+            <div class="stage__flow">
+                <h2 id="exploit-title" class="visually-hidden">Exploit narrative</h2>
+                <article class="story" data-story="exploit">
+                    <p class="story__lead">Misconfig leveraged, foothold established, privilege escalated. Controls
+                        tagged against ATT&amp;CK.</p>
+                    <ul class="key-points" id="exploit-points"></ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="stage" id="detect" data-stage="detect" aria-labelledby="detect-title">
+            <div class="stage__sticky" aria-hidden="true">
+                <div class="panel" data-panel="detect">
+                    <!-- WTL target: panel title -->
+                    <h2 class="panel__title wtl" data-wtl-key="detect">Detection</h2>
+                    <div class="soc-console" id="soc-console" role="region" aria-label="SOC console">
+                        <div class="console__filters" role="tablist" aria-label="Log filters">
+                            <button role="tab" aria-selected="true" data-filter="all">All</button>
+                            <button role="tab" aria-selected="false" data-filter="phishing">Phishing</button>
+                            <button role="tab" aria-selected="false" data-filter="lateral">Lateral</button>
+                            <button role="tab" aria-selected="false" data-filter="exfil">Exfil</button>
+                        </div>
+                        <div class="console__feed" id="console-feed" aria-live="polite"></div>
+                        <div class="console__actions">
+                            <button id="copy-iocs" class="btn btn-compact" title="Copy sample IOCs">Copy IOCs</button>
+                        </div>
+                    </div>
+                    <div class="packet-view" id="packet-view" role="region" aria-label="Packet microscope"></div>
+                </div>
+            </div>
+            <div class="stage__flow">
+                <h2 id="detect-title" class="visually-hidden">Detection narrative</h2>
+                <article class="story" data-story="detect">
+                    <p class="story__lead">Signals triaged in the console. Alerts tuned to reduce noise and surface the
+                        spike.</p>
+                    <ul class="key-points" id="detect-points"></ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="stage" id="respond" data-stage="respond" aria-labelledby="respond-title">
+            <div class="stage__sticky" aria-hidden="true">
+                <div class="panel" data-panel="respond">
+                    <!-- WTL target: panel title -->
+                    <h2 class="panel__title wtl" data-wtl-key="respond">Response and Containment</h2>
+                    <ol class="timeline" id="response-timeline" aria-label="Incident response timeline"></ol>
+                    <button class="btn btn-soft" id="open-playbook" aria-haspopup="dialog"
+                        aria-controls="playbook-drawer">Playbook</button>
+                </div>
+            </div>
+            <div class="stage__flow">
+                <h2 id="respond-title" class="visually-hidden">Response narrative</h2>
+                <article class="story" data-story="respond">
+                    <p class="story__lead">Host isolated. Credentials rotated. Indicators blocked. Stakeholders briefed
+                        with clear actions.</p>
+                    <ul class="key-points" id="respond-points"></ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="stage" id="forensics" data-stage="forensics" aria-labelledby="forensics-title">
+            <div class="stage__sticky" aria-hidden="true">
+                <div class="panel" data-panel="forensics">
+                    <!-- WTL target: panel title -->
+                    <h2 class="panel__title wtl" data-wtl-key="forensics">Forensics</h2>
+                    <div class="evidence-grid" id="evidence-grid" role="list" aria-label="Evidence gallery"></div>
+                </div>
+            </div>
+            <div class="stage__flow">
+                <h2 id="forensics-title" class="visually-hidden">Forensics narrative</h2>
+                <article class="story" data-story="forensics">
+                    <p class="story__lead">Disk triage, keyword hits, and carve summary linked to custody notes.
+                        Findings correlate with network artifacts.</p>
+                    <ul class="key-points" id="forensics-points"></ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="stage" id="lessons" data-stage="lessons" aria-labelledby="lessons-title">
+            <div class="stage__sticky" aria-hidden="true">
+                <div class="panel" data-panel="lessons">
+                    <!-- WTL target: panel title -->
+                    <h2 class="panel__title wtl" data-wtl-key="lessons">Lessons Learned</h2>
+                    <div class="heatmap" id="control-heatmap" role="img" aria-label="Control performance heatmap"></div>
+                </div>
+            </div>
+            <div class="stage__flow">
+                <h2 id="lessons-title" class="visually-hidden">Lessons narrative</h2>
+                <article class="story" data-story="lessons">
+                    <p class="story__lead">Controls recalibrated. Detections hardened. Recovery validated. Risk reduced
+                        and measured.</p>
+                    <ul class="key-points" id="lessons-points"></ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Credentials and Projects -->
+        <section class="section" id="credentials" aria-labelledby="credentials-title">
+            <h2 id="credentials-title" class="section__title">Credentials and Programs</h2>
+            <div class="timeline-strip" id="cred-strip" role="list" aria-label="Credentials timeline"></div>
+        </section>
+
+        <section class="section" id="projects" aria-labelledby="projects-title">
+            <h2 id="projects-title" class="section__title">Case Summaries</h2>
+            <div class="case-grid" id="case-grid" role="list" aria-label="Project and simulation summaries"></div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section" id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title" class="section__title">Contact</h2>
+            <address class="contact__grid">
+                <a class="contact__item" href="mailto:favouriloba@gmail.com">favouriloba@gmail.com</a>
+                <a class="contact__item" href="tel:+2349030410360">+234 903 041 0360</a>
+                <a class="contact__item" href="https://www.linkedin.com/in/favour-iloba" target="_blank"
+                    rel="noopener">linkedin.com/in/favour-iloba</a>
+                <a class="contact__item" href="https://github.com/khristos" target="_blank"
+                    rel="noopener">github.com/khristos</a>
+                <a class="contact__item" href="https://medritess.my.canva.site/iloba" target="_blank"
+                    rel="noopener">Portfolio</a>
+                <button id="print-cv" class="btn btn-outline">Print CV</button>
+            </address>
+
+            <div class="skills-summary">
+                <h3 class="skills-summary__title">Core Competencies</h3>
+                <p>
+                    Network defense, vulnerability scanning with Nmap, packet analysis with Wireshark, incident
+                    detection and response,
+                    digital forensics with Autopsy, Linux administration, Python and Bash scripting, SQL for triage,
+                    IAM fundamentals, threat intelligence, and playbook-driven response aligned to NIST and ATT&amp;CK.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Playbook Drawer -->
+    <div class="drawer" id="playbook-drawer" role="dialog" aria-modal="true" aria-labelledby="playbook-title" hidden>
+        <div class="drawer__inner">
+            <header class="drawer__header">
+                <h3 id="playbook-title">Incident Response Playbook</h3>
+                <button class="drawer__close" id="close-playbook" aria-label="Close playbook">Close</button>
+            </header>
+            <div class="drawer__content" id="playbook-content"></div>
+        </div>
+        <div class="drawer__backdrop" id="playbook-backdrop" aria-hidden="true"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <p class="footer__text">
+            &copy; 2025 <strong>khristos.github.io</strong> &middot;
+            Built by <strong>The1807</strong>.
+        </p>
+    </footer>
+
+    <!-- No script fallback -->
+    <noscript>
+        <div class="noscript">
+            JavaScript is disabled. You can still view sections but interactive elements like the SOC console will not
+            animate.
+        </div>
+    </noscript>
+
+    <!-- Scripts -->
+    <script src="/assets/scripts/main.js" defer></script>
+    <script src="/assets/scripts/wtl.js" defer></script>
+</body>
+
+</html>

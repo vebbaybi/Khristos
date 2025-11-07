@@ -1,0 +1,43 @@
+{
+  "name": "Favour Iloba — Cybersecurity Portfolio",
+  "short_name": "Cybersec Portfolio",
+  "description": "Explore Favour Iloba's cybersecurity portfolio: incident-driven scrollytelling from reconnaissance to response. Built by The1807.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0f14",
+  "theme_color": "#0b0f14",
+  "lang": "en-US",
+  "dir": "ltr",
+
+  "icons": [
+    {
+      "src": "/assets/gif/logo.gif",
+      "sizes": "48x48",
+      "type": "image/gif"
+    },
+    {
+      "src": "/assets/gif/logo.gif",
+      "sizes": "96x96",
+      "type": "image/gif"
+    },
+    {
+      "src": "/assets/gif/logo.gif",
+      "sizes": "192x192",
+      "type": "image/gif"
+    },
+    {
+      "src": "/assets/gif/logo.gif",
+      "sizes": "512x512",
+      "type": "image/gif",
+      "purpose": "any maskable"
+    }
+  ],
+
+  "id": "/",
+  "start": "index.html",
+  "categories": ["portfolio", "cybersecurity", "personal", "education"],
+  "display_override": ["fullscreen", "minimal-ui"],
+  "prefer_related_applications": false
+}

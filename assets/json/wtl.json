@@ -1,0 +1,98 @@
+{
+  "targets": {
+    "hero": {
+      "phrases": [
+        "Threat driven.",
+        "Evidence first.",
+        "From probe to post-incident."
+      ],
+      "typingSpeed": 16,
+      "deleteSpeed": 24,
+      "holdMs": 1100,
+      "loop": true,
+      "prefix": "",
+      "suffix": "",
+      "punctuationPause": { ".": 220, ",": 120, ":": 220, "/": 180, ")": 180 },
+      "protectedTokens": ["MITRE ATT&CK", "TLS 1.3"],
+      "allowWrap": "none",
+      "resume": true,
+      "hideCursorWhileDelete": false,
+      "widthLock": true
+    },
+
+    "recon": {
+      "phrases": [
+        "Enumerating surfaces...",
+        "Fingerprinting services...",
+        "Queuing findings."
+      ],
+      "typingSpeed": 18,
+      "deleteSpeed": 26,
+      "holdMs": 900,
+      "loop": true,
+      "prefix": "",
+      "suffix": "",
+      "allowWrap": "none"
+    },
+
+    "exploit": {
+      "phrases": [
+        "Foothold simulated.",
+        "Privilege escalated (lab).",
+        "Controls mapped to ATT&CK."
+      ],
+      "typingSpeed": 18,
+      "deleteSpeed": 26,
+      "holdMs": 1000,
+      "loop": true
+    },
+
+    "detect": {
+      "phrases": [
+        "Signals triaged.",
+        "Noise reduced.",
+        "Spike surfaced."
+      ],
+      "typingSpeed": 15,
+      "deleteSpeed": 24,
+      "holdMs": 950,
+      "loop": true
+    },
+
+    "respond": {
+      "phrases": [
+        "Isolating host.",
+        "Rotating secrets.",
+        "Blocking indicators."
+      ],
+      "typingSpeed": 17,
+      "deleteSpeed": 25,
+      "holdMs": 950,
+      "loop": true
+    },
+
+    "forensics": {
+      "phrases": [
+        "Triage complete.",
+        "Timeline built.",
+        "Custody sealed."
+      ],
+      "typingSpeed": 16,
+      "deleteSpeed": 23,
+      "holdMs": 950,
+      "loop": true
+    },
+
+    "lessons": {
+      "phrases": [
+        "Controls hardened.",
+        "Detections tuned.",
+        "Risk reduced."
+      ],
+      "typingSpeed": 17,
+      "deleteSpeed": 25,
+      "holdMs": 900,
+      "loop": true
+    }
+  }
+}

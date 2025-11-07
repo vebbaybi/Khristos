@@ -1,0 +1,228 @@
+{
+  "recon": {
+    "intel": [
+      {
+        "title": "Vulnerability Scanning",
+        "detail": "Conducted vulnerability assessments using Nmap to identify weaknesses in systems and networks",
+        "tags": ["Penetration Testing", "Vulnerability Assessment"]
+      },
+      {
+        "title": "Network Traffic Analysis",
+        "detail": "Utilized Wireshark to filter and analyze captured packets, detecting patterns indicative of malware communication and unauthorized access",
+        "tags": ["Threat Intelligence", "Network Fundamentals"]
+      }
+    ],
+    "tools": ["Nmap", "Wireshark", "SQL"],
+    "points": ["Mastered Linux commands for reconnaissance and exploitation processes", "Identified high-risk vulnerabilities through hands-on ethical hacking practices"]
+  },
+  "exploit": {
+    "chain": [
+      {
+        "id": "T1190",
+        "title": "Initial Access",
+        "detail": "Simulated exploitation of system vulnerabilities via ethical hacking techniques learned in self-study",
+        "mitre": "T1190"
+      },
+      {
+        "id": "T1059",
+        "title": "Execution",
+        "detail": "Automated threat intelligence analysis using Python scripts for command execution in simulated environments",
+        "mitre": "T1059"
+      },
+      {
+        "id": "T1078",
+        "title": "Privilege Escalation",
+        "detail": "Explored misconfigurations in Linux environments to simulate privilege escalation during penetration testing",
+        "mitre": "T1078"
+      }
+    ],
+    "points": ["Established simulated footholds through vulnerability exploitation", "Integrated Python scripting for IDS/IPS functionalities", "Mapped activities to MITRE ATT&CK framework for comprehensive reporting"]
+  },
+  "detect": {
+    "logs": [
+      {
+        "ts": "2024-12-15 10:45:00",
+        "level": "high",
+        "tag": "phishing",
+        "text": "Identified suspicious phishing email in Mastercard simulation from unknown IP",
+        "kind": "alert"
+      },
+      {
+        "ts": "2024-12-15 11:00:00",
+        "level": "medium",
+        "tag": "lateral",
+        "text": "Detected anomalous network traffic patterns using Wireshark analysis",
+        "kind": "accent"
+      },
+      {
+        "ts": "2024-12-15 11:15:00",
+        "level": "critical",
+        "tag": "exfil",
+        "text": "Blocked potential data exfiltration attempt identified in packet captures",
+        "kind": "alert"
+      },
+      {
+        "ts": "2024-12-15 11:30:00",
+        "level": "info",
+        "tag": "all",
+        "text": "Normal system login verified through log analysis",
+        "kind": "success"
+      }
+    ],
+    "iocs": [
+      {
+        "type": "IP",
+        "value": "192.168.1.100"
+      },
+      {
+        "type": "Hash",
+        "value": "d41d8cd98f00b204e9800998ecf8427e"
+      }
+    ],
+    "packets": [
+      {
+        "summary": "Malware Communication Attempt",
+        "detail": "Source: 192.168.1.50\nDestination: External C2 Server\nFlags: SYN-ACK\nPayload: Suspicious beaconing pattern"
+      },
+      {
+        "summary": "Unauthorized Access Probe",
+        "detail": "Source: 192.168.1.100\nDestination: Internal Database\nMethod: SQL Injection Attempt\nData: Malformed query string"
+      }
+    ]
+  },
+  "respond": {
+    "timeline": [
+      {
+        "step": "Identify Threats",
+        "detail": "Analyzed and reported phishing threats in Mastercard simulation",
+        "state": "complete"
+      },
+      {
+        "step": "Implement Training",
+        "detail": "Developed procedures for security training in high-risk business areas",
+        "state": "complete"
+      },
+      {
+        "step": "Enhance Posture",
+        "detail": "Produced recommendations to improve client's cybersecurity based on OILRIG analysis",
+        "state": "complete"
+      }
+    ],
+    "playbook": [
+      {
+        "title": "Phishing Response",
+        "steps": ["Verify reported incidents", "Analyze email attachments and links", "Notify incident response team and implement training"],
+        "refs": ["Mastercard Simulation", "MITRE ATT&CK T1566"]
+      },
+      {
+        "title": "Threat Containment",
+        "steps": ["Isolate affected systems", "Document findings for forensics", "Align with business objectives for IAM"],
+        "refs": ["Datacom and Tata Simulations"]
+      }
+    ],
+    "points": ["Contained simulated breaches through rapid response", "Communicated complex concepts via documentation and presentations", "Improved organizational security training and procedures"]
+  },
+  "forensics": {
+    "evidence": [
+      {
+        "title": "Digital Device Analysis",
+        "bullets": ["Utilized Autopsy to analyze text and media data from devices", "Applied digital forensics principles in real-world case simulations"]
+      },
+      {
+        "title": "Network Artifact Examination",
+        "bullets": ["Captured and filtered network traffic with Wireshark", "Correlated packet data with security events for threat identification"]
+      }
+    ],
+    "points": ["Maintained chain of custody in forensic simulations", "Findings: Initial vectors often phishing or misconfigurations", "Recommendations: Strengthen email filters and access controls"]
+  },
+  "lessons": {
+    "heatmap": [
+      {
+        "id": "IAM",
+        "state": "warn",
+        "label": "Identity and Access Management: Opportunities for improvement identified"
+      },
+      {
+        "id": "Training",
+        "state": "good",
+        "label": "Security Awareness Training: Effective in reducing risks"
+      },
+      {
+        "id": "VulnMgmt",
+        "state": "alert",
+        "label": "Vulnerability Management: Gaps in patching and scanning highlighted"
+      }
+    ],
+    "points": ["Enhanced detections for advanced persistent threats like OILRIG", "Validated IAM best practices in simulations", "Reduced simulated incident response time through automation"]
+  },
+  "credentials": [
+    {
+      "when": "2025",
+      "title": "Cisco Cyber Threat Management",
+      "org": "Cisco Networking Academy",
+      "link": "https://www.netacad.com/courses/cyber-threat-management"
+    },
+    {
+      "when": "2025",
+      "title": "Cisco Ethical Hacker",
+      "org": "Cisco Networking Academy",
+      "link": "https://www.netacad.com/courses/ethical-hacker"
+    },
+    {
+      "when": "2024",
+      "title": "Google Cybersecurity Professional Certificate",
+      "org": "Google",
+      "link": "https://www.coursera.org/professional-certificates/google-cybersecurity"
+    },
+    {
+      "when": "2025",
+      "title": "Google Project Management Professional Certificate",
+      "org": "Google",
+      "link": "https://www.coursera.org/professional-certificates/google-project-management"
+    },
+    {
+      "when": "2024",
+      "title": "CPD Certified Pen-Testing Consultant",
+      "org": "Mile2",
+      "link": "https://mile2.com/cptc-outline/"
+    },
+    {
+      "when": "2025",
+      "title": "Google IT Support Professional Certificate",
+      "org": "Google",
+      "link": "https://www.coursera.org/professional-certificates/google-it-support"
+    },
+    {
+      "when": "2025",
+      "title": "Dlan Networks Academy Cybersecurity",
+      "org": "DLAN Services",
+      "link": ""
+    }
+  ],
+  "projects": [
+    {
+      "title": "Building Luna AI Application",
+      "context": "Developed Python-based scripts to integrate IDS and IPS functionalities within an AI application for automating cybersecurity tasks",
+      "outcome": "Automated threat intelligence analysis, vulnerability scanning, and incident response processes",
+      "link": ""
+    },
+    {
+      "title": "Mastercard Cybersecurity Virtual Experience",
+      "context": "Served as analyst on Security Awareness Team, identifying and reporting phishing threats",
+      "outcome": "Analyzed business areas for robust security training and implemented procedures",
+      "link": "https://www.theforage.com/simulations/mastercard/cybersecurity-flcb"
+    },
+    {
+      "title": "Datacom Cybersecurity Simulation",
+      "context": "Investigated tools, techniques, and tactics of OILRIG (APT34) threat group",
+      "outcome": "Produced comprehensive report with recommendations to enhance client's cybersecurity posture",
+      "link": "https://www.theforage.com/simulations/datacom/cybersecurity-yndz"
+    },
+    {
+      "title": "Tata Cybersecurity Security Analyst Simulation",
+      "context": "Focused on identity and access management (IAM) principles and best practices",
+      "outcome": "Delivered documentation and presentations aligning cybersecurity with business objectives",
+      "link": "https://www.theforage.com/simulations/tcs/cybersecurity-pzmc"
+    }
+  ]
+}

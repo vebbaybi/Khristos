@@ -1,0 +1,171 @@
+/* ============================================================================
+   wtl.css — Webbaby Type Loop (compatible with CYBERSEC.CSS)
+   - Zero-jitter typewriter line with caret
+   - Works with header/nav chrome + day/night tokens
+   - Honors prefers-reduced-motion and print
+   ============================================================================ */
+
+/* -------------------------
+   0) Token hooks (inherits from main.css if present)
+   ------------------------- */
+:root {
+    --wtl-caret-color: currentColor;
+    --wtl-caret-thickness: 1.75px;
+    /* visually crisp at most DPIs */
+    --wtl-caret-height: 1em;
+    /* auto-matches line-height */
+    --wtl-caret-offset-y: 0.06em;
+    /* sits slightly above baseline */
+    --wtl-gap-right: 0.12ch;
+    /* prevents clip on last glyph */
+}
+
+/* On chrome surfaces, ensure readable caret against --on-chrome */
+.site-header .wtl,
+.stage-nav .wtl,
+.nav-dropdown .wtl {
+    color: var(--on-chrome, currentColor);
+}
+
+/* -------------------------
+   1) Base line
+   ------------------------- */
+.wtl {
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+
+    /* Single-line safety */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+
+    /* No hyphenation / mid-word breaks */
+    hyphens: none;
+    word-break: keep-all;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+
+    /* Prevent last-glyph clip when caret overlays */
+    padding-right: var(--wtl-gap-right);
+
+    /* Stabilize letterspacing during updates */
+    font-kerning: normal;
+    font-variant-ligatures: contextual common-ligatures;
+}
+
+/* Optional soft wrap via attribute */
+.wtl[data-wtl-wrap="soft"] {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+/* -------------------------
+   2) Caret (pseudo so width doesn’t reflow text)
+   ------------------------- */
+.wtl::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: var(--wtl-caret-offset-y);
+    width: var(--wtl-caret-thickness);
+    height: var(--wtl-caret-height);
+    background: var(--wtl-caret-color);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(0);
+    will-change: opacity;
+}
+
+/* Cursor visible (script toggles this class while typing/holding) */
+.wtl.wtl--cursor-on::after {
+    opacity: 1;
+    animation: wtl-blink 1s steps(1, end) infinite;
+}
+
+/* Cursor forced off */
+.wtl.wtl--cursor-off::after {
+    opacity: 0 !important;
+    animation: none !important;
+}
+
+/* -------------------------
+   3) Stability helpers
+   ------------------------- */
+
+/* JS sets --wtl-locked-width to reserve max line width across cycles */
+.wtl.wtl--locked {
+    min-width: var(--wtl-locked-width, auto);
+}
+
+/* When using monospace mode (optional) */
+.wtl.wtl--mono {
+    font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+    letter-spacing: 0.01em;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .wtl,
+    .wtl::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .wtl.wtl--cursor-on::after {
+        opacity: 1;
+    }
+}
+
+/* Print: show full text, hide caret */
+@media print {
+    .wtl::after {
+        display: none !important;
+    }
+}
+
+/* -------------------------
+   4) Tone variants (inherits tokens from main.css)
+   ------------------------- */
+.wtl--accent {
+    color: var(--accent, currentColor);
+}
+
+.wtl--alert {
+    color: var(--alert, currentColor);
+}
+
+.wtl--ok {
+    color: var(--success, currentColor);
+}
+
+/* Ensure caret contrasts in both themes */
+@media (prefers-color-scheme: dark) {
+    .wtl::after {
+        background: currentColor;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .wtl::after {
+        background: currentColor;
+    }
+}
+
+/* -------------------------
+   5) Animations
+   ------------------------- */
+@keyframes wtl-blink {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
