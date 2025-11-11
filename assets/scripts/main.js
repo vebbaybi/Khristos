@@ -6,8 +6,9 @@
   var prefersReducedMotion = w.matchMedia && w.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var DATA = Object.create(null);
 
-  var graphData, link, node, label, simulation, svg, scroller;
+  var graphData, link, node, label, simulation, svg;
   var graphWidth, graphHeight;
+  var scrollers = {};
 
   var colorMap = {
     'Core': 'var(--color-core)',
@@ -212,7 +213,9 @@
       svg.attr("width", graphWidth).attr("height", graphHeight);
       simulation.force("center", d3.forceCenter(graphWidth / 2, graphHeight / 2));
       simulation.alpha(0.3).restart();
-      if (scroller && scroller.resize) scroller.resize();
+      Object.values(scrollers).forEach(function(scroller) {
+        if (scroller && scroller.resize) scroller.resize();
+      });
     });
 
     simulation.alpha(1).restart();
@@ -267,42 +270,91 @@
     if (!chain || !points) return;
 
     setHTML(chain, "");
-    var svgEl = d.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svgEl.setAttribute("viewBox", "0 0 400 300");
-    svgEl.setAttribute("aria-hidden", "true");
-    var path = d.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.setAttribute("d", "M50 50 L150 150 L250 50 L350 150");
-    path.setAttribute("stroke", "var(--accent)");
-    path.setAttribute("stroke-width", "2");
-    path.setAttribute("fill", "none");
-    var length = path.getTotalLength();
-    path.style.strokeDasharray = length;
-    path.style.strokeDashoffset = length;
-    svgEl.appendChild(path);
-
-    var io = w.IntersectionObserver ? new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) {
-        if (path.animate) path.animate([{ strokeDashoffset: length }, { strokeDashoffset: 0 }], { duration: 2000, fill: "forwards" });
-        else path.style.strokeDashoffset = "0";
-      }
-    }) : null;
-    if (io) io.observe(chain);
-
-    safeArray(EXPLOIT.chain).forEach(function (step, i) {
-      var circle = d.createElementNS("http://www.w3.org/2000/svg", "circle");
-      circle.setAttribute("cx", 50 + i * 100);
-      circle.setAttribute("cy", i % 2 ? 150 : 50);
-      circle.setAttribute("r", 20);
-      circle.setAttribute("fill", "var(--surface)");
-      svgEl.appendChild(circle);
-      var text = d.createElementNS("http://www.w3.org/2000/svg", "text");
-      text.setAttribute("x", 50 + i * 100);
-      text.setAttribute("y", (i % 2 ? 150 : 50) + 5);
-      text.setAttribute("text-anchor", "middle");
-      text.setAttribute("dominant-baseline", "middle");
-      setText(text, step.id); svgEl.appendChild(text);
+    
+    // Create proper D3.js force layout for attack chain
+    var width = chain.clientWidth || 600;
+    var height = chain.clientHeight || 400;
+    
+    var exploitSvg = d3.select("#attack-chain")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", [0, 0, width, height]);
+    
+    var chainData = safeArray(EXPLOIT.chain);
+    
+    // Create nodes from chain data
+    var nodes = chainData.map(function(step, i) {
+      return {
+        id: step.id,
+        title: step.title,
+        detail: step.detail,
+        mitre: step.mitre,
+        x: (i * (width / (chainData.length - 1))) || width/2,
+        y: (i % 2 === 0 ? height * 0.3 : height * 0.7)
+      };
     });
-    chain.appendChild(svgEl);
+    
+    // Create links between consecutive nodes
+    var links = [];
+    for (var i = 0; i < nodes.length - 1; i++) {
+      links.push({
+        source: nodes[i],
+        target: nodes[i + 1]
+      });
+    }
+    
+    // Draw links
+    exploitSvg.selectAll(".attack-chain-link")
+      .data(links)
+      .enter()
+      .append("path")
+      .attr("class", "attack-chain-link")
+      .attr("d", function(d) {
+        return "M" + d.source.x + "," + d.source.y + 
+               "C" + (d.source.x + 100) + "," + d.source.y + 
+               " " + (d.target.x - 100) + "," + d.target.y + 
+               " " + d.target.x + "," + d.target.y;
+      })
+      .style("stroke-dasharray", "10,5")
+      .style("stroke-dashoffset", 1000)
+      .transition()
+      .duration(2000)
+      .style("stroke-dashoffset", 0);
+    
+    // Draw nodes
+    var nodeGroups = exploitSvg.selectAll(".attack-chain-node")
+      .data(nodes)
+      .enter()
+      .append("g")
+      .attr("class", "attack-chain-node")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+    
+    nodeGroups.append("circle")
+      .attr("r", 25)
+      .attr("class", "attack-chain-node-circle")
+      .style("fill", "var(--surface)")
+      .style("stroke", "var(--accent)")
+      .style("stroke-width", 2);
+    
+    nodeGroups.append("text")
+      .attr("class", "attack-chain-label")
+      .attr("y", 4)
+      .text(function(d) { return d.id; });
+    
+    // Add tooltips
+    nodeGroups.append("title")
+      .text(function(d) { return d.title + ": " + d.detail; });
+    
+    // Add click interactions
+    nodeGroups.on("click", function(event, d) {
+      var detailBox = qs("#attack-chain-detail") || create("div", "attack-chain-detail");
+      detailBox.id = "attack-chain-detail";
+      setHTML(detailBox, "<h4>" + d.title + " (" + d.id + ")</h4><p>" + d.detail + "</p>");
+      if (!qs("#attack-chain-detail", chain)) {
+        chain.appendChild(detailBox);
+      }
+    });
 
     setHTML(points, "");
     safeArray(EXPLOIT.points).forEach(function (pt) { var li = create("li"); setText(li, pt); points.appendChild(li); });
@@ -405,7 +457,7 @@
           if (prefersReducedMotion) step();
           else {
             if (w.requestAnimationFrame) consoleRAF = requestAnimationFrame(step);
-            else setTimeout(step, 16);
+            else setTimeout(step, 50);
           }
         }
       }, 50);
@@ -438,9 +490,11 @@
       safeArray(RESPOND.points).forEach(function (pt) { var li = create("li"); setText(li, pt); points.appendChild(li); });
     }
 
+    // === MODIFIED openDrawer FUNCTION ===
     function openDrawer() {
       if (!drawer) return;
-      drawer.hidden = false; d.body.style.overflow = "hidden";
+      drawer.hidden = false;
+      d.body.classList.add('drawer-open'); // Only this line for body management
       if (content) {
         setHTML(content, "");
         safeArray(RESPOND.playbook).forEach(function (pb) {
@@ -461,9 +515,12 @@
       }
       setTimeout(function () { if (closeBtn) closeBtn.focus(); }, 50);
     }
+
+    // === MODIFIED closeDrawer FUNCTION ===
     function closeDrawer() {
       if (!drawer) return;
-      drawer.hidden = true; d.body.style.overflow = "";
+      drawer.hidden = true;
+      d.body.classList.remove('drawer-open'); // Only this line for body management
       if (openBtn) openBtn.focus();
     }
 
@@ -502,6 +559,7 @@
       var labelTxt = cell.label || cell.id || "";
       div.setAttribute("data-state", cell.state || "");
       div.setAttribute("title", labelTxt);
+      setText(div, cell.id || "");
       heatmap.appendChild(div);
     });
 
@@ -574,11 +632,92 @@
     }
   }
 
-  function handleStepEnter(response) {
-    qsa(".step").forEach(function (el) { el.classList.remove("is-active"); });
+  function handleSkillsStepEnter(response) {
+    qsa("#skills-graph .step").forEach(function (el) { el.classList.remove("is-active"); });
     response.element.classList.add("is-active");
     var idx = parseInt(response.element.getAttribute("data-step"), 10);
     updateGraph(isNaN(idx) ? 0 : idx);
+  }
+
+  function handleReconStepEnter(response) {
+    var panel = qs('[data-panel="recon"]');
+    if (panel) {
+      panel.classList.add("active");
+      // Trigger any recon-specific animations
+      var cards = qsa(".intel-card", panel);
+      cards.forEach(function(card, index) {
+        setTimeout(function() {
+          card.classList.add("visible");
+        }, index * 200);
+      });
+    }
+  }
+
+  function handleExploitStepEnter(response) {
+    var panel = qs('[data-panel="exploit"]');
+    if (panel) {
+      panel.classList.add("active");
+      // Animate attack chain
+      var paths = qsa(".attack-chain-link", panel);
+      paths.forEach(function(path, index) {
+        setTimeout(function() {
+          path.style.strokeDashoffset = "0";
+        }, index * 500);
+      });
+    }
+  }
+
+  function handleDetectStepEnter(response) {
+    var panel = qs('[data-panel="detect"]');
+    if (panel) {
+      panel.classList.add("active");
+      // Start console if not already running
+      if (!consoleRunning) {
+        runConsole();
+      }
+    }
+  }
+
+  function handleRespondStepEnter(response) {
+    var panel = qs('[data-panel="respond"]');
+    if (panel) {
+      panel.classList.add("active");
+      // Animate timeline
+      var timelineItems = qsa("#response-timeline li", panel);
+      timelineItems.forEach(function(item, index) {
+        setTimeout(function() {
+          item.classList.add("visible");
+        }, index * 300);
+      });
+    }
+  }
+
+  function handleForensicsStepEnter(response) {
+    var panel = qs('[data-panel="forensics"]');
+    if (panel) {
+      panel.classList.add("active");
+      // Animate evidence cards
+      var evidenceCards = qsa(".evidence-card", panel);
+      evidenceCards.forEach(function(card, index) {
+        setTimeout(function() {
+          card.classList.add("visible");
+        }, index * 250);
+      });
+    }
+  }
+
+  function handleLessonsStepEnter(response) {
+    var panel = qs('[data-panel="lessons"]');
+    if (panel) {
+      panel.classList.add("active");
+      // Animate heatmap
+      var heatmapCells = qsa("#control-heatmap div", panel);
+      heatmapCells.forEach(function(cell, index) {
+        setTimeout(function() {
+          cell.classList.add("visible");
+        }, index * 150);
+      });
+    }
   }
 
   function setupScrollama() {
@@ -590,9 +729,64 @@
       if (node) updateGraph(4);
       return;
     }
-    scroller = scrollama();
-    scroller.setup({ step: "#skills-graph .step", offset: 0.5 }).onStepEnter(handleStepEnter);
-    w.addEventListener("resize", scroller.resize);
+
+    // Skills Graph Scrollama
+    scrollers.skills = scrollama();
+    scrollers.skills.setup({
+      step: "#skills-graph .step",
+      offset: 0.5,
+      progress: true
+    }).onStepEnter(handleSkillsStepEnter);
+
+    // Recon Scrollama
+    scrollers.recon = scrollama();
+    scrollers.recon.setup({
+      step: "#recon",
+      offset: 0.3
+    }).onStepEnter(handleReconStepEnter);
+
+    // Exploit Scrollama
+    scrollers.exploit = scrollama();
+    scrollers.exploit.setup({
+      step: "#exploit",
+      offset: 0.3
+    }).onStepEnter(handleExploitStepEnter);
+
+    // Detect Scrollama
+    scrollers.detect = scrollama();
+    scrollers.detect.setup({
+      step: "#detect",
+      offset: 0.3
+    }).onStepEnter(handleDetectStepEnter);
+
+    // Respond Scrollama
+    scrollers.respond = scrollama();
+    scrollers.respond.setup({
+      step: "#respond",
+      offset: 0.3
+    }).onStepEnter(handleRespondStepEnter);
+
+    // Forensics Scrollama
+    scrollers.forensics = scrollama();
+    scrollers.forensics.setup({
+      step: "#forensics",
+      offset: 0.3
+    }).onStepEnter(handleForensicsStepEnter);
+
+    // Lessons Scrollama
+    scrollers.lessons = scrollama();
+    scrollers.lessons.setup({
+      step: "#lessons",
+      offset: 0.3
+    }).onStepEnter(handleLessonsStepEnter);
+
+    // Resize all scrollers
+    w.addEventListener("resize", function() {
+      Object.values(scrollers).forEach(function(scroller) {
+        if (scroller && scroller.resize) scroller.resize();
+      });
+    });
+
     if (node) updateGraph(0);
   }
 
@@ -712,7 +906,7 @@
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
         drops[i] = drops[i] > canvas.height / fontSize ? 0 : drops[i] + 1;
       }
-      if (!prefersReducedMotion) { if (w.requestAnimationFrame) requestAnimationFrame(draw); else setTimeout(draw, 16); }
+      if (!prefersReducedMotion) { if (w.requestAnimationFrame) requestAnimationFrame(draw); else setTimeout(draw, 50); }
     }
     draw();
     w.addEventListener("resize", function () {
@@ -810,5 +1004,4 @@
       }
     });
   })();
-
 })();

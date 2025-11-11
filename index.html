@@ -1,87 +1,91 @@
 <!doctype html>
-<html lang="en" data-app="cybersec-portfolio" data-page="cybersec" data-version="v1.4">
+<html lang="en" data-app="cybersec-portfolio" data-page="cybersec" data-version="v2.0">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; connect-src 'self' https://khristos.github.io;" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="apple-mobile-web-app-title" content="Cybersec Portfolio" />
-    <meta name="google" content="notranslate" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta name="application-name" content="Cybersec Portfolio" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b0f14" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0f14" />
-    <meta name="color-scheme" content="dark light" />
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; connect-src 'self' https://khristos.github.io;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Cybersec Portfolio">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b0f14">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0f14">
+    <meta name="color-scheme" content="dark light">
 
     <title>Favour Iloba — Cybersecurity Portfolio | Incident-driven Scrollytelling</title>
     <meta name="description"
-        content="Explore Favour Iloba's cybersecurity portfolio: a single-page scrollytelling site narrating a cyber incident from reconnaissance to lessons learned. Evidence-based skills in threat detection, forensics, and response. Printable CV included." />
+        content="Explore Favour Iloba's cybersecurity portfolio: a single-page scrollytelling site narrating a cyber incident from reconnaissance to lessons learned. Evidence-based skills in threat detection, forensics, and response. Printable CV included.">
     <meta name="keywords"
-        content="cybersecurity portfolio, incident response, threat detection, digital forensics, SOC analyst, Nmap, Wireshark, Autopsy, NIST, MITRE ATT&CK, Favour Iloba, D3.js, scrollytelling" />
-    <meta name="author" content="Favour Iloba" />
-    <link rel="canonical" href="https://khristos.github.io/" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        content="cybersecurity portfolio, incident response, threat detection, digital forensics, SOC analyst, Nmap, Wireshark, Autopsy, NIST, MITRE ATT&CK, Favour Iloba, D3.js, scrollytelling">
+    <meta name="author" content="Favour Iloba">
+    <link rel="canonical" href="https://khristos.github.io/">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Favour Iloba — Cybersecurity Portfolio" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Favour Iloba — Cybersecurity Portfolio">
     <meta property="og:description"
-        content="One page. One CSS. One JS. A full security lifecycle with mapped skills, artifacts, and credentials in an incident-driven narrative." />
-    <meta property="og:url" content="https://khristos.github.io/" />
-    <meta property="og:image" content="https://khristos.github.io/assets/gif/logo.gif" />
-    <meta property="og:image:alt" content="Cybersecurity Portfolio Cover" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="KHRisTOS Cybersecurity Portfolio" />
+        content="One page. One CSS. One JS. A full security lifecycle with mapped skills, artifacts, and credentials in an incident-driven narrative.">
+    <meta property="og:url" content="https://khristos.github.io/">
+    <meta property="og:image" content="https://khristos.github.io/assets/gif/logo.gif">
+    <meta property="og:image:alt" content="Cybersecurity Portfolio Cover">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="KHRisTOS Cybersecurity Portfolio">
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Favour Iloba — Cybersecurity Portfolio" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Favour Iloba — Cybersecurity Portfolio">
     <meta name="twitter:description"
-        content="Incident-driven scrollytelling from recon to lessons learned. Evidence-first cybersecurity." />
-    <meta name="twitter:image" content="https://khristos.github.io/assets/gif/logo.gif" />
+        content="Incident-driven scrollytelling from recon to lessons learned. Evidence-first cybersecurity.">
+    <meta name="twitter:image" content="https://khristos.github.io/assets/gif/logo.gif">
 
-    <link rel="icon" type="image/gif" href="/assets/gif/logo.gif" />
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/gif" href="/assets/gif/logo.gif">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
 
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-    <link rel="preconnect" href="https://unpkg.com" crossorigin />
-    <link rel="dns-prefetch" href="//unpkg.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="dns-prefetch" href="//unpkg.com">
 
-    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <script src="https://unpkg.com/scrollama"></script>
+    <script>
+        window.d3Loaded = false;
+        window.scrollamaLoaded = false;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7" onerror="window.d3Loaded=false"
+        onload="window.d3Loaded=true"></script>
+    <script src="https://unpkg.com/scrollama" onerror="window.scrollamaLoaded=false"
+        onload="window.scrollamaLoaded=true"></script>
 
-    <link rel="preload" as="style" href="/assets/styles/main.css" />
-    <link rel="preload" as="style" href="/assets/styles/wtl.css" />
-    <link rel="preload" as="script" href="/assets/scripts/main.js" />
-    <link rel="preload" as="script" href="/assets/scripts/wtl.js" />
-    <link rel="preload" as="fetch" href="/assets/json/cybersec.json" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/assets/styles/main.css" />
-    <link rel="stylesheet" href="/assets/styles/wtl.css" />
-    <link rel="alternate" type="application/pdf" href="/assets/FAVOUR-ILOBA-RESUME.pdf" title="Resume PDF" />
+    <link rel="preload" as="style" href="/assets/styles/main.css">
+    <link rel="preload" as="script" href="/assets/scripts/main.js">
+    <link rel="preload" as="fetch" href="/assets/json/cybersec.json" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/wtl.css">
+    <link rel="alternate" type="application/pdf" href="/assets/FAVOUR-ILOBA-RESUME.pdf" title="Resume PDF">
 
     <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Favour Iloba",
-    "jobTitle": "Cybersecurity Analyst",
-    "url": "https://khristos.github.io/",
-    "sameAs": [
-      "https://github.com/khristos",
-      "https://www.linkedin.com/in/favour-iloba"
-    ],
-    "knowsAbout": [
-      "Cybersecurity","Incident Response","Threat Detection",
-      "Digital Forensics","Network Defense","Vulnerability Scanning",
-      "NIST Framework","MITRE ATT&CK"
-    ]
-  }
-  </script>
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Favour Iloba",
+        "jobTitle": "Cybersecurity Analyst",
+        "url": "https://khristos.github.io/",
+        "sameAs": [
+            "https://github.com/khristos",
+            "https://www.linkedin.com/in/favour-iloba"
+        ],
+        "knowsAbout": [
+            "Cybersecurity","Incident Response","Threat Detection",
+            "Digital Forensics","Network Defense","Vulnerability Scanning",
+            "NIST Framework","MITRE ATT&CK"
+        ]
+    }
+    </script>
 </head>
 
 <body>
@@ -138,8 +142,8 @@
                 width="150" height="150" loading="lazy" />
             <h1 class="hero__title wtl" data-wtl-key="hero" aria-live="polite">Threat driven. Evidence first.</h1>
             <div class="hero__actions" role="group" aria-label="Primary actions">
-                <a class="btn btn-primary" href="/assets/FAVOUR-ILOBA-RESUME.pdf" download><img src="assets/gif/logo.gif"
-                        alt="" width="18" height="18" class="btn__icon" />Download Resume</a>
+                <a class="btn btn-primary" href="/assets/FAVOUR-ILOBA-RESUME.pdf" download><img
+                        src="assets/gif/logo.gif" alt="" width="18" height="18" class="btn__icon" />Download Resume</a>
                 <a class="btn btn-ghost" href="#contact"><img src="assets/gif/logo.gif" alt="" width="18" height="18"
                         class="btn__icon" />Contact</a>
             </div>
@@ -171,18 +175,26 @@
                     <h2 id="skills-graph-title" class="story__lead">The Core Skillset</h2>
                     <p>Every successful cyber defense starts with a <strong>strong foundation</strong>. This graph
                         represents the network of my core competencies, from blue team defense to red team offense.</p>
+                    <img src="/assets/images/secdevop.jpg"
+                        alt="Security Development Operations - Modern infrastructure security integrating development and operations"
+                        loading="lazy" />
                 </article>
                 <article class="step story" data-step="1">
                     <h2 class="story__lead">Offensive Security: Learning the Attack Path</h2>
                     <p>I focus on <strong>vulnerability identification</strong>, testing, and simulating real-world
                         threats. Understanding tools like <strong>Nmap</strong> and <strong>Burp Suite</strong> is
                         critical to hardening defenses.</p>
+                    <img src="/assets/images/offensive.jpg"
+                        alt="Offensive security - Vulnerability identification and penetration testing"
+                        loading="lazy" />
                     <p class="key-points">Trigger: Highlight Red Team Skills.</p>
                 </article>
                 <article class="step story" data-step="2">
                     <h2 class="story__lead">Defensive Security: Detection and Triage</h2>
                     <p>My work in <strong>Incident Response</strong> requires robust monitoring and analysis. I leverage
                         SIEM platforms and forensic techniques to track and contain threats effectively.</p>
+                    <img src="/assets/images/defensive.avif"
+                        alt="Defensive security - Incident response and threat monitoring" loading="lazy" />
                     <p class="key-points">Trigger: Highlight Blue Team Skills.</p>
                 </article>
                 <article class="step story" data-step="3">
@@ -190,6 +202,8 @@
                     <p>Security is integrated, not bolted on. I secure modern <strong>cloud environments</strong>
                         (AWS/Azure) and automate compliance using <strong>Infrastructure as Code (IaC)</strong>
                         principles like Terraform.</p>
+                    <img src="/assets/images/vulnerability.jpg"
+                        alt="Vulnerability management - Cloud security and infrastructure as code" loading="lazy" />
                     <p class="key-points">Trigger: Highlight Cloud/IaC Skills.</p>
                 </article>
                 <article class="step story" data-step="4">
@@ -215,6 +229,8 @@
                 <article class="story" data-story="recon">
                     <p class="story__lead">External footprint mapped. Hosts identified. Services fingerprinted. Findings
                         routed to the exploit queue.</p>
+                    <img src="/assets/images/recon.jpg" alt="Reconnaissance - Network scanning and footprint analysis"
+                        loading="lazy" />
                     <ul class="key-points" id="recon-points"></ul>
                 </article>
             </div>
@@ -232,6 +248,8 @@
                 <article class="story" data-story="exploit">
                     <p class="story__lead">Misconfig leveraged, foothold established, privilege escalated. Controls
                         tagged against ATT&amp;CK.</p>
+                    <img src="/assets/images/exploit.jpg"
+                        alt="Exploitation - Vulnerability exploitation and privilege escalation" loading="lazy" />
                     <ul class="key-points" id="exploit-points"></ul>
                 </article>
             </div>
@@ -297,6 +315,8 @@
                 <article class="story" data-story="forensics">
                     <p class="story__lead">Disk triage, keyword hits, and carve summary linked to custody notes.
                         Findings correlate with network artifacts.</p>
+                    <img src="/assets/images/forensics.jpg"
+                        alt="Digital forensics - Evidence analysis and chain of custody" loading="lazy" />
                     <ul class="key-points" id="forensics-points"></ul>
                 </article>
             </div>

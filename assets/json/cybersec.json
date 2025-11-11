@@ -1,269 +1,304 @@
 {
   "skills_network": {
     "nodes": [
-      {"id": "Favour Iloba", "group": "Core", "level": 1, "skill": 100},
-      {"id": "Communication", "group": "Core", "level": 2, "skill": 85},
+      { "id": "Favour Iloba", "group": "Core", "level": 1, "skill": 100 },
+      { "id": "Communication", "group": "Core", "level": 2, "skill": 85 },
 
-      {"id": "Penetration Testing", "group": "Offensive", "level": 2, "skill": 90},
-      {"id": "Ethical Hacking", "group": "Offensive", "level": 2, "skill": 90},
-      {"id": "Vulnerability Assessment", "group": "Offensive", "level": 2, "skill": 85},
-      {"id": "Nmap", "group": "Offensive", "level": 3, "skill": 80},
-      
-      {"id": "Incident Response", "group": "Defensive", "level": 2, "skill": 95},
-      {"id": "Threat Intelligence", "group": "Defensive", "level": 2, "skill": 85},
-      {"id": "Digital Forensics", "group": "Defensive", "level": 2, "skill": 75},
-      {"id": "Wireshark", "group": "Defensive", "level": 3, "skill": 80},
-      {"id": "Autopsy", "group": "Defensive", "level": 3, "skill": 70},
+      { "id": "Penetration Testing", "group": "Offensive", "level": 2, "skill": 90 },
+      { "id": "Ethical Hacking", "group": "Offensive", "level": 2, "skill": 90 },
+      { "id": "Vulnerability Assessment", "group": "Offensive", "level": 2, "skill": 85 },
+      { "id": "Nmap", "group": "Offensive", "level": 3, "skill": 80 },
 
-      {"id": "Python Scripting", "group": "Cloud", "level": 2, "skill": 95},
-      {"id": "Automation & AI", "group": "Cloud", "level": 2, "skill": 85},
-      {"id": "Linux/Bash", "group": "Cloud", "level": 2, "skill": 90},
-      {"id": "Network Fundamentals", "group": "Cloud", "level": 2, "skill": 80}
+      { "id": "Incident Response", "group": "Defensive", "level": 2, "skill": 95 },
+      { "id": "Threat Intelligence", "group": "Defensive", "level": 2, "skill": 85 },
+      { "id": "Digital Forensics", "group": "Defensive", "level": 2, "skill": 75 },
+      { "id": "Wireshark", "group": "Defensive", "level": 3, "skill": 80 },
+      { "id": "Autopsy", "group": "Defensive", "level": 3, "skill": 70 },
+
+      { "id": "Python Scripting", "group": "Cloud", "level": 2, "skill": 95 },
+      { "id": "Automation & AI", "group": "Cloud", "level": 2, "skill": 85 },
+      { "id": "Linux/Bash", "group": "Cloud", "level": 2, "skill": 90 },
+      { "id": "Network Fundamentals", "group": "Cloud", "level": 2, "skill": 80 }
     ],
     "links": [
-      {"source": "Penetration Testing", "target": "Favour Iloba", "value": 5},
-      {"source": "Incident Response", "target": "Favour Iloba", "value": 5},
-      {"source": "Python Scripting", "target": "Favour Iloba", "value": 6},
-      {"source": "Communication", "target": "Favour Iloba", "value": 4},
-      
-      {"source": "Penetration Testing", "target": "Ethical Hacking", "value": 5},
-      {"source": "Vulnerability Assessment", "target": "Nmap", "value": 4},
-      {"source": "Ethical Hacking", "target": "Linux/Bash", "value": 6}, 
-      
-      {"source": "Incident Response", "target": "Threat Intelligence", "value": 5},
-      {"source": "Digital Forensics", "target": "Autopsy", "value": 4},
-      {"source": "Digital Forensics", "target": "Wireshark", "value": 3},
-      
-      {"source": "Python Scripting", "target": "Automation & AI", "value": 7}, 
-      {"source": "Python Scripting", "target": "Threat Intelligence", "value": 4},
-      {"source": "Network Fundamentals", "target": "Wireshark", "value": 5},
-      {"source": "Network Fundamentals", "target": "Incident Response", "value": 4},
-      {"source": "Python Scripting", "target": "Nmap", "value": 5}
+      { "source": "Penetration Testing", "target": "Favour Iloba", "value": 5 },
+      { "source": "Incident Response", "target": "Favour Iloba", "value": 5 },
+      { "source": "Python Scripting", "target": "Favour Iloba", "value": 6 },
+      { "source": "Communication", "target": "Favour Iloba", "value": 4 },
+
+      { "source": "Penetration Testing", "target": "Ethical Hacking", "value": 5 },
+      { "source": "Vulnerability Assessment", "target": "Nmap", "value": 4 },
+      { "source": "Ethical Hacking", "target": "Linux/Bash", "value": 6 },
+
+      { "source": "Incident Response", "target": "Threat Intelligence", "value": 5 },
+      { "source": "Digital Forensics", "target": "Autopsy", "value": 4 },
+      { "source": "Digital Forensics", "target": "Wireshark", "value": 3 },
+
+      { "source": "Python Scripting", "target": "Automation & AI", "value": 7 },
+      { "source": "Python Scripting", "target": "Threat Intelligence", "value": 4 },
+      { "source": "Network Fundamentals", "target": "Wireshark", "value": 5 },
+      { "source": "Network Fundamentals", "target": "Incident Response", "value": 4 },
+      { "source": "Python Scripting", "target": "Nmap", "value": 5 }
     ]
   },
+
   "recon": {
     "intel": [
       {
         "title": "Vulnerability Scanning",
-        "detail": "Conducted vulnerability assessments using Nmap to identify weaknesses in systems and networks",
+        "detail": "Assessed network security posture by performing comprehensive reconnaissance using Nmap scans to identify system weaknesses.",
         "tags": ["Penetration Testing", "Vulnerability Assessment"]
       },
       {
         "title": "Network Traffic Analysis",
-        "detail": "Utilized Wireshark to filter and analyze captured packets, detecting patterns indicative of malware communication and unauthorized access",
+        "detail": "Analyzed network traffic using Wireshark, a deep packet inspection tool to detect traffic patterns and identify hidden vulnerabilities and exploits.",
         "tags": ["Threat Intelligence", "Network Fundamentals"]
       }
     ],
     "tools": ["Nmap", "Wireshark", "SQL"],
-    "points": ["Mastered Linux commands for reconnaissance and exploitation processes", "Identified high-risk vulnerabilities through hands-on ethical hacking practices"]
+    "points": [
+      "Mastered Linux commands for reconnaissance and exploitation processes.",
+      "Identified high-risk vulnerabilities through hands-on ethical hacking practices like TryHackMe for real-world hacking techniques."
+    ]
   },
+
   "exploit": {
     "chain": [
       {
         "id": "T1190",
         "title": "Initial Access",
-        "detail": "Simulated exploitation of system vulnerabilities via ethical hacking techniques learned in self-study",
+        "detail": "Simulated exploitation of system vulnerabilities via ethical hacking techniques learned in self-study.",
         "mitre": "T1190"
       },
       {
         "id": "T1059",
         "title": "Execution",
-        "detail": "Automated threat intelligence analysis using Python scripts for command execution in simulated environments",
+        "detail": "Automated threat intelligence analysis using Python-based scripts for command execution within virtualized environments.",
         "mitre": "T1059"
       },
       {
         "id": "T1078",
         "title": "Privilege Escalation",
-        "detail": "Explored misconfigurations in Linux environments to simulate privilege escalation during penetration testing",
+        "detail": "Examined misconfigurations in Linux environments to simulate privilege escalation during penetration testing.",
         "mitre": "T1078"
       }
     ],
-    "points": ["Established simulated footholds through vulnerability exploitation", "Integrated Python scripting for IDS/IPS functionalities", "Mapped activities to MITRE ATT&CK framework for comprehensive reporting"]
+    "points": [
+      "Established simulated footholds through vulnerability exploitation.",
+      "Integrated Python scripting for IDS/IPS functionalities.",
+      "Mapped activities to MITRE ATT&CK framework for comprehensive reporting."
+    ]
   },
+
   "detect": {
     "logs": [
       {
         "ts": "2024-12-15 10:45:00",
         "level": "high",
         "tag": "phishing",
-        "text": "Identified suspicious phishing email in Mastercard simulation from unknown IP",
+        "text": "Identified and reported suspicious security threats such as phishing email in Mastercard cybersecurity virtual experience program.",
         "kind": "alert"
       },
       {
         "ts": "2024-12-15 11:00:00",
         "level": "medium",
         "tag": "lateral",
-        "text": "Detected anomalous network traffic patterns using Wireshark analysis",
+        "text": "Detected anomalous network traffic patterns using Wireshark analysis.",
         "kind": "accent"
       },
       {
         "ts": "2024-12-15 11:15:00",
         "level": "critical",
         "tag": "exfil",
-        "text": "Blocked potential data exfiltration attempt identified in packet captures",
+        "text": "Blocked potential data exfiltration attempt identified in packet captures.",
         "kind": "alert"
       },
       {
         "ts": "2024-12-15 11:30:00",
         "level": "info",
         "tag": "all",
-        "text": "Normal system login verified through log analysis",
+        "text": "Normal system login verified through log analysis.",
         "kind": "success"
       }
     ],
     "iocs": [
-      {
-        "type": "IP",
-        "value": "192.168.1.100"
-      },
-      {
-        "type": "Hash",
-        "value": "d41d8cd98f00b204e9800998ecf8427e"
-      }
+      { "type": "IP", "value": "192.168.1.100" },
+      { "type": "Hash", "value": "d41d8cd98f00b204e9800998ecf8427e" }
     ],
     "packets": [
       {
         "summary": "Malware Communication Attempt",
-        "detail": "Source: 192.168.1.50\nDestination: External C2 Server\nFlags: SYN-ACK\nPayload: Suspicious beaconing pattern"
+        "detail": "Source: 192.168.1.50\nDestination: External C2 Server\nFlags: SYN-ACK\nPayload: Suspicious beaconing pattern."
       },
       {
         "summary": "Unauthorized Access Probe",
-        "detail": "Source: 192.168.1.100\nDestination: Internal Database\nMethod: SQL Injection Attempt\nData: Malformed query string"
+        "detail": "Source: 192.168.1.100\nDestination: Internal Database\nMethod: SQL Injection Attempt\nData: Malformed query string."
       }
     ]
   },
+
   "respond": {
     "timeline": [
       {
         "step": "Identify Threats",
-        "detail": "Analyzed and reported phishing threats in Mastercard simulation",
+        "detail": "Analyzed and reported phishing threats in Mastercard cybersecurity virtual experience program.",
         "state": "complete"
       },
       {
         "step": "Implement Training",
-        "detail": "Developed procedures for security training in high-risk business areas",
+        "detail": "Helped develop procedures for more robust security training in high-risk business areas.",
         "state": "complete"
       },
       {
         "step": "Enhance Posture",
-        "detail": "Produced recommendations to improve client's cybersecurity based on OILRIG analysis",
+        "detail": "Produced recommendations to improve client's cybersecurity based on OILRIG analysis.",
         "state": "complete"
       }
     ],
     "playbook": [
       {
         "title": "Phishing Response",
-        "steps": ["Verify reported incidents", "Analyze email attachments and links", "Notify incident response team and implement training"],
-        "refs": ["Mastercard Simulation", "MITRE ATT&CK T1566"]
+        "steps": [
+          "Verify reported incidents",
+          "Analyze email attachments and links",
+          "Notify incident response team and implement training"
+        ],
+        "refs": ["Mastercard cybersecurity virtual experience program"]
       },
       {
         "title": "Threat Containment",
-        "steps": ["Isolate affected systems", "Document findings for forensics", "Align with business objectives for IAM"],
-        "refs": ["Datacom and Tata Simulations"]
+        "steps": [
+          "Isolate affected systems",
+          "Document findings for forensics",
+          "Align with business objectives for IAM"
+        ],
+        "refs": ["Datacom and Tata Security Analyst Job Simulations"]
       }
     ],
-    "points": ["Contained simulated breaches through rapid response", "Communicated complex concepts via documentation and presentations", "Improved organizational security training and procedures"]
+    "points": [
+      "Contained simulated breaches through rapid response.",
+      "Communicated complex concepts via documentation and presentations.",
+      "Improved organizational security training and procedures."
+    ]
   },
+
   "forensics": {
     "evidence": [
       {
         "title": "Digital Device Analysis",
-        "bullets": ["Utilized Autopsy to analyze text and media data from devices", "Applied digital forensics principles in real-world case simulations"]
+        "bullets": [
+          "Utilized Autopsy to analyze text and media data from digital devices.",
+          "Applied digital forensics principles in real-world case simulations."
+        ]
       },
       {
-        "title": "Network Artifact Examination",
-        "bullets": ["Captured and filtered network traffic with Wireshark", "Correlated packet data with security events for threat identification"]
+        "title": "Packet captures (PCAP)",
+        "bullets": [
+          "Captured and filtered network traffic with Wireshark.",
+          "Correlated packet data with security events for threat identification."
+        ]
       }
     ],
-    "points": ["Maintained chain of custody in forensic simulations", "Findings: Initial vectors often phishing or misconfigurations", "Recommendations: Strengthen email filters and access controls"]
+    "points": [
+      "Maintained chain of custody in forensic simulations.",
+      "Findings: Initial vectors often phishing or misconfigurations.",
+      "Recommendations: Strengthen email filters and access controls."
+    ]
   },
+
   "lessons": {
     "heatmap": [
       {
         "id": "IAM",
         "state": "warn",
-        "label": "Identity and Access Management: Opportunities for improvement identified"
+        "label": "Identity and Access Management: Opportunities for improvement identified."
       },
       {
         "id": "Training",
         "state": "good",
-        "label": "Security Awareness Training: Effective in reducing risks"
+        "label": "Security Awareness Training: Effective in reducing risks."
       },
       {
         "id": "VulnMgmt",
         "state": "alert",
-        "label": "Vulnerability Management: Gaps in patching and scanning highlighted"
+        "label": "Vulnerability Management: Gaps in patching and scanning highlighted."
       }
     ],
-    "points": ["Enhanced detections for advanced persistent threats like OILRIG", "Validated IAM best practices in simulations", "Reduced simulated incident response time through automation"]
+    "points": [
+      "Enhanced detections for advanced persistent threats like OILRIG.",
+      "Validated IAM best practices in simulations.",
+      "Reduced simulated incident response time through automation."
+    ]
   },
+
   "credentials": [
     {
-      "when": "2025",
+      "when": "January 2025",
       "title": "Cisco Cyber Threat Management",
       "org": "Cisco Networking Academy",
       "link": "https://www.netacad.com/courses/cyber-threat-management"
     },
     {
-      "when": "2025",
+      "when": "July 2025",
       "title": "Cisco Ethical Hacker",
       "org": "Cisco Networking Academy",
       "link": "https://www.netacad.com/courses/ethical-hacker"
     },
     {
-      "when": "2024",
+      "when": "December 2024",
       "title": "Google Cybersecurity Professional Certificate",
       "org": "Google",
       "link": "https://www.coursera.org/professional-certificates/google-cybersecurity"
     },
     {
-      "when": "2025",
+      "when": "September 2025",
       "title": "Google Project Management Professional Certificate",
       "org": "Google",
       "link": "https://www.coursera.org/professional-certificates/google-project-management"
     },
     {
-      "when": "2024",
-      "title": "CPD Certified Pen-Testing Consultant",
+      "when": "December 2024",
+      "title": "CPD Certified Pen-Testing Consultant CPTC",
       "org": "Mile2",
       "link": "https://mile2.com/cptc-outline/"
     },
     {
-      "when": "2025",
+      "when": "Febuary 2025",
       "title": "Google IT Support Professional Certificate",
       "org": "Google",
       "link": "https://www.coursera.org/professional-certificates/google-it-support"
     },
     {
-      "when": "2025",
+      "when": "Octorber 2024-June 2025",
       "title": "Dlan Networks Academy Cybersecurity",
       "org": "DLAN Services",
-      "link": ""
+      "link": "http://dlanservices.com/"
     }
   ],
+
   "projects": [
     {
       "title": "Building Luna AI Application",
-      "context": "Developed Python-based scripts to integrate IDS and IPS functionalities within an AI application for automating cybersecurity tasks",
-      "outcome": "Automated threat intelligence analysis, vulnerability scanning, and incident response processes",
+      "context": "Developed Python-based scripts to integrate IDS and IPS functionalities within an AI application to ensure its network interaction adheres to defined security policies.",
+      "outcome": "Automated threat intelligence analysis, vulnerability scanning, and incident response processes.",
       "link": ""
     },
     {
       "title": "Mastercard Cybersecurity Virtual Experience",
-      "context": "Served as analyst on Security Awareness Team, identifying and reporting phishing threats",
-      "outcome": "Analyzed business areas for robust security training and implemented procedures",
+      "context": "Served as analyst on Security Awareness Team, identifying and reporting phishing threats.",
+      "outcome": "Analyzed business areas for robust security training and implemented procedures.",
       "link": "https://www.theforage.com/simulations/mastercard/cybersecurity-flcb"
     },
     {
       "title": "Datacom Cybersecurity Simulation",
-      "context": "Investigated tools, techniques, and tactics of OILRIG (APT34) threat group",
-      "outcome": "Produced comprehensive report with recommendations to enhance client's cybersecurity posture",
+      "context": "Investigated tools, techniques, and tactics of OILRIG (APT34) threat group.",
+      "outcome": "Produced comprehensive report with recommendations to enhance client's cybersecurity posture.",
       "link": "https://www.theforage.com/simulations/datacom/cybersecurity-yndz"
     },
     {
       "title": "Tata Cybersecurity Security Analyst Simulation",
-      "context": "Focused on identity and access management (IAM) principles and best practices",
-      "outcome": "Delivered documentation and presentations aligning cybersecurity with business objectives",
+      "context": "Focused on identity and access management (IAM) principles and best practices.",
+      "outcome": "Delivered documentation and presentations aligning cybersecurity with business objectives.",
       "link": "https://www.theforage.com/simulations/tcs/cybersecurity-pzmc"
     }
   ]
