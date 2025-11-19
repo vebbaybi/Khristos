@@ -60,7 +60,7 @@
             return r.json();
           })
           .then(function (json) { assignConfig(json); })
-          .catch(function () { /* silent: external config optional */ })
+          .catch(function () {})
           .finally(resolve);
       } catch (_) {
         resolve();

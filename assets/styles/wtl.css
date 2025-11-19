@@ -78,17 +78,18 @@
     will-change: opacity;
 }
 
-/* Cursor visible (script toggles this class while typing/holding) */
+/* ----
+Cursor visible (script toggles this class while typing/holding) 
 .wtl.wtl--cursor-on::after {
     opacity: 1;
     animation: wtl-blink 1s steps(1, end) infinite;
 }
 
-/* Cursor forced off */
 .wtl.wtl--cursor-off::after {
     opacity: 0 !important;
     animation: none !important;
 }
+--*/
 
 /* -------------------------
    3) Stability helpers

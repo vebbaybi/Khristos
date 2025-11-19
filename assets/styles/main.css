@@ -1,7 +1,5 @@
 /* ============================================================================
    main.css — Universal Scrollytelling Theme (Cross-Browser & Cross-Device)
-   Optimized for: Chrome, Firefox, Safari, Edge, iOS, Android, Windows, macOS
-   Supports: High DPI displays, zooming, various screen ratios, accessibility
    ============================================================================ */
 
 /* ============ 1) UNIVERSAL CSS RESET & BOX-SIZING ============ */
@@ -15,52 +13,42 @@
 
 html {
     -webkit-text-size-adjust: 100%;
-    /* Prevent font scaling in landscape */
     text-size-adjust: 100%;
     scroll-behavior: smooth;
 }
 
 /* ============ 2) UNIVERSAL TOKENS (CSS Custom Properties) ============ */
 :root {
-    /* Core Colors - Universal compatibility */
     --bg: #f7f7f7;
     --text: #14161a;
     --muted: #6b7280;
 
-    /* Background images with fallbacks */
     --page-bg-light: url("/assets/images/bg-light.jpg");
     --page-bg-dark: url("/assets/images/bg-dark.jpg");
     --page-bg: var(--page-bg-light);
 
-    /* Universal overlay system */
     --bg-overlay: rgba(255, 255, 255, 0.16);
     --bg-overlay-2: rgba(255, 255, 255, 0.08);
 
-    /* Universal accent colors */
     --accent: #0a84ff;
     --accent-2: #6ee7ff;
 
-    /* Chrome/UI colors */
     --chrome: #0c1220;
     --on-chrome: #e8f1ff;
     --chrome-border: rgba(255, 255, 255, 0.12);
 
-    /* Surface colors */
     --surface: #eceff3;
     --surface-2: #e5eaf3;
 
-    /* Status colors - universal recognition */
     --alert: #ff4d2e;
     --success: #28a745;
 
-    /* D3/Cyber visualization colors */
     --color-core: #0a84ff;
     --color-offensive: #ff4d4d;
     --color-defensive: #38a169;
     --color-cloud: #f0e68c;
     --color-dim: #444c56;
 
-    /* Universal spacing system */
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
@@ -68,7 +56,6 @@ html {
     --space-xl: 2rem;
     --space-xxl: 3rem;
 
-    /* Universal typography scale */
     --text-xs: 0.75rem;
     --text-sm: 0.875rem;
     --text-base: 1rem;
@@ -78,18 +65,15 @@ html {
     --text-3xl: 1.875rem;
     --text-4xl: 2.25rem;
 
-    /* Universal elevation */
     --shadow: 0 2px 8px rgba(3, 10, 24, 0.12);
     --shadow-medium: 0 4px 16px rgba(3, 10, 24, 0.16);
     --shadow-strong: 0 8px 32px rgba(3, 10, 24, 0.22);
 
-    /* Universal border radius */
     --radius-sm: 4px;
     --radius: 8px;
     --radius-lg: 12px;
     --radius-xl: 16px;
 
-    /* Universal font stack - cross platform */
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         "Helvetica Neue", Arial, "Noto Sans", sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
@@ -97,17 +81,14 @@ html {
     --font-mono: "SFMono-Regular", "Roboto Mono", Consolas, "Liberation Mono",
         Menlo, Monaco, "Courier New", monospace;
 
-    /* Universal timing functions */
     --dur-1: 0.2s;
     --dur-2: 0.3s;
     --easing: ease-in-out;
 
-    /* Universal layout constraints */
     --container: min(100% - 2rem, 1200px);
     --gutter: clamp(1rem, 3vw, 2rem);
     --header-h: 64px;
 
-    /* Safe area insets for mobile devices */
     --safe-area-inset-top: env(safe-area-inset-top, 0px);
     --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
     --safe-area-inset-left: env(safe-area-inset-left, 0px);
@@ -125,8 +106,8 @@ html {
         --bg-overlay-2: rgba(0, 0, 0, 0.26);
         --accent: #3aa7ff;
         --accent-2: #8af3ff;
-        --chrome: #0a0f1a;
-        --on-chrome: #dceaff;
+        --chrome: #37f7c7;
+        --on-chrome: rgb(62, 84, 117);
         --chrome-border: rgba(255, 255, 255, 0.10);
         --surface: #121826;
         --surface-2: #0f1522;
@@ -136,7 +117,6 @@ html {
     }
 }
 
-/* Manual dark theme override */
 html[data-theme="dark"] {
     --bg: #0a0d14;
     --text: #e2e8f0;
@@ -172,7 +152,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Universal typography scale */
 h1,
 h2,
 h3,
@@ -256,7 +235,6 @@ body::after {
         linear-gradient(180deg, var(--bg-overlay), var(--bg-overlay));
 }
 
-/* Print compatibility */
 @media print {
 
     body::before,
@@ -272,7 +250,6 @@ body::after {
     padding: 0 var(--gutter);
 }
 
-/* Universal skip link for accessibility */
 .skip-link {
     position: absolute;
     top: -100px;
@@ -309,6 +286,7 @@ body::after {
 }
 
 .site-header__inner {
+    background: var(--chrome);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -343,7 +321,6 @@ body::after {
     gap: var(--space-sm);
 }
 
-/* Universal button styles */
 .theme-toggle,
 .nav-toggle {
     background: transparent;
@@ -374,7 +351,6 @@ body::after {
     height: 20px;
 }
 
-/* Universal hamburger menu */
 .nav-toggle {
     flex-direction: column;
     gap: 3px;
@@ -400,7 +376,6 @@ body::after {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Universal mobile navigation */
 .nav-dropdown {
     position: fixed;
     top: 0;
@@ -408,7 +383,6 @@ body::after {
     width: min(100%, 320px);
     height: 100vh;
     height: 100dvh;
-    /* Dynamic viewport height for mobile */
     z-index: 999;
     background: var(--chrome);
     color: var(--on-chrome);
@@ -453,7 +427,7 @@ body::after {
     transform: translateX(4px);
 }
 
-/* Universal stage navigation */
+/* stage navigation */
 .stage-nav {
     position: sticky;
     top: calc(var(--header-h) + var(--safe-area-inset-top));
@@ -674,7 +648,6 @@ body::after {
     padding: clamp(var(--space-xl), 6vh, 4rem) var(--gutter);
 }
 
-/* Universal step system */
 .step {
     min-height: 100vh;
     min-height: 100dvh;
@@ -689,7 +662,6 @@ body::after {
     opacity: 1;
 }
 
-/* Universal panel container */
 .panel {
     width: min(90%, 800px);
     height: min(90%, 800px);
@@ -725,7 +697,6 @@ body::after {
     border-radius: 2px;
 }
 
-/* Universal narrative styling */
 .story__lead {
     font-size: clamp(var(--text-lg), 2.5vw, var(--text-xl));
     margin-bottom: var(--space-lg);
@@ -743,7 +714,6 @@ body::after {
 }
 
 /* ============ 11) UNIVERSAL VISUALIZATION COMPONENTS ============ */
-/* D3 Network Graph */
 #skill-network {
     width: 100%;
     height: 100%;
@@ -798,7 +768,6 @@ body::after {
     font-weight: 700;
 }
 
-/* Intel Cards */
 .intel-cards {
     display: grid;
     gap: var(--space-lg);
@@ -837,7 +806,6 @@ body::after {
     flex-wrap: wrap;
 }
 
-/* Tool Badges */
 .tool-badges {
     display: flex;
     gap: var(--space-sm);
@@ -855,7 +823,6 @@ body::after {
     border: none;
 }
 
-/* Attack Chain */
 #attack-chain {
     width: 100%;
     height: 100%;
@@ -892,7 +859,6 @@ body::after {
     pointer-events: none;
 }
 
-/* SOC Console */
 .soc-console {
     background: color-mix(in srgb, var(--surface) 80%, var(--bg) 20%);
     color: var(--text);
@@ -954,7 +920,6 @@ body::after {
     border-color: transparent;
 }
 
-/* Timeline */
 .timeline {
     list-style: none;
     padding: 0;
@@ -980,7 +945,6 @@ body::after {
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
-/* Evidence Grid */
 .evidence-grid {
     display: grid;
     gap: var(--space-lg);
@@ -1015,7 +979,6 @@ body::after {
     line-height: 1.4;
 }
 
-/* Heatmap */
 .heatmap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -1147,7 +1110,6 @@ body::after {
     z-index: 1099;
 }
 
-/* Playbook content */
 .playbook-block {
     background: var(--surface);
     border: 1px solid var(--chrome-border);
@@ -1196,7 +1158,6 @@ body::after {
     margin-bottom: var(--space-xs);
 }
 
-/* Playbook animations */
 .playbook-block {
     opacity: 0;
     transform: translateX(20px);
@@ -1226,7 +1187,6 @@ body::after {
     }
 }
 
-/* Body scroll lock */
 body.drawer-open {
     overflow: hidden;
 }
@@ -1266,7 +1226,6 @@ body.drawer-open {
     border-top: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
 }
 
-/* Blog Articles */
 .article-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
@@ -1322,7 +1281,6 @@ body.drawer-open {
     background: color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
-/* Credentials */
 .timeline-strip {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
@@ -1362,7 +1320,6 @@ body.drawer-open {
     font-size: var(--text-sm);
 }
 
-/* Projects */
 .case-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
@@ -1391,7 +1348,6 @@ body.drawer-open {
     line-height: 1.5;
 }
 
-/* Contact */
 .contact__grid {
     display: flex;
     flex-wrap: wrap;
@@ -1495,7 +1451,6 @@ body.drawer-open {
     color: var(--accent);
 }
 
-/* Progress bar */
 .global-progress {
     position: fixed;
     left: 0;
@@ -1507,7 +1462,6 @@ body.drawer-open {
     transition: width 0.3s var(--easing);
 }
 
-/* Code blocks */
 pre,
 code {
     font-family: var(--font-mono);
@@ -1520,7 +1474,6 @@ code {
     border: 1px solid var(--chrome-border);
 }
 
-/* Footer */
 .footer {
     text-align: center;
     padding: var(--space-xl) var(--gutter);
@@ -1537,7 +1490,6 @@ code {
     font-size: var(--text-sm);
 }
 
-/* Empty states */
 .article-grid:empty,
 .timeline-strip:empty,
 .case-grid:empty {
@@ -1564,7 +1516,6 @@ code {
     border: 0 !important;
 }
 
-/* Focus styles for keyboard navigation */
 button:focus-visible,
 a:focus-visible,
 [tabindex]:focus-visible {
@@ -1572,7 +1523,6 @@ a:focus-visible,
     outline-offset: 2px;
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
 
     *,
@@ -1585,7 +1535,6 @@ a:focus-visible,
     }
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
     :root {
         --bg: #ffffff;
@@ -1598,10 +1547,6 @@ a:focus-visible,
 }
 
 /* ============ 17) UNIVERSAL RESPONSIVE BREAKPOINTS ============ */
-
-/* Mobile First: Base styles work for all devices */
-
-/* Small tablets and large phones (640px+) */
 @media (min-width: 640px) {
     :root {
         --gutter: clamp(1.5rem, 4vw, 2.5rem);
@@ -1616,7 +1561,6 @@ a:focus-visible,
     }
 }
 
-/* Tablets and small laptops (768px+) */
 @media (min-width: 768px) {
     .stage {
         grid-template-columns: 1fr 1fr;
@@ -1635,7 +1579,6 @@ a:focus-visible,
     }
 }
 
-/* Laptops and desktops (1024px+) */
 @media (min-width: 1024px) {
     :root {
         --container: min(100% - 3rem, 1200px);
@@ -1646,18 +1589,18 @@ a:focus-visible,
     }
 
     .stage-nav ul {
-        justify-content: flex-start;
+        justify-content: center;
+        max-width: var(--container);
+        margin-inline: auto;
     }
 }
 
-/* Large desktops (1280px+) */
 @media (min-width: 1280px) {
     :root {
         --container: min(100% - 4rem, 1400px);
     }
 }
 
-/* Ultra-wide screens (1920px+) */
 @media (min-width: 1920px) {
     :root {
         --container: min(100% - 6rem, 1600px);
@@ -1665,8 +1608,6 @@ a:focus-visible,
 }
 
 /* ============ 18) MOBILE-SPECIFIC OPTIMIZATIONS ============ */
-
-/* Small phones (under 400px) */
 @media (max-width: 400px) {
     .site-header__name {
         font-size: var(--text-lg);
@@ -1683,7 +1624,6 @@ a:focus-visible,
     }
 }
 
-/* Landscape mobile optimization */
 @media (max-height: 500px) and (orientation: landscape) {
     .hero {
         padding: calc(var(--header-h) + var(--space-xl)) var(--gutter) var(--space-xl);
@@ -1699,7 +1639,6 @@ a:focus-visible,
     }
 }
 
-/* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
 
     .btn:hover,
@@ -1776,8 +1715,6 @@ a:focus-visible,
 }
 
 /* ============ 20) BROWSER-SPECIFIC FIXES ============ */
-
-/* Safari specific fixes */
 @supports (-webkit-touch-callout: none) {
     .stage__sticky {
         height: -webkit-fill-available;
@@ -1788,7 +1725,6 @@ a:focus-visible,
     }
 }
 
-/* Firefox scrollbar styling */
 @-moz-document url-prefix() {
     .soc-console {
         scrollbar-width: thin;
@@ -1796,7 +1732,6 @@ a:focus-visible,
     }
 }
 
-/* Edge specific fixes */
 @supports (-ms-ime-align: auto) {
     .stage {
         display: flex;
@@ -1808,7 +1743,6 @@ a:focus-visible,
     }
 }
 
-/* Internet Explorer 11 support (basic fallbacks) */
 @media all and (-ms-high-contrast: none),
 (-ms-high-contrast: active) {
     .stage {
