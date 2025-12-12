@@ -205,7 +205,6 @@
                         principles like Terraform.</p>
                     <img src="/assets/images/vulnerability.jpg"
                         alt="Vulnerability management - Cloud security and infrastructure as code" loading="lazy" />
-                    <p class="key-points">Trigger: Highlight Cloud/IaC Skills.</p>
                 </article>
                 <article class="step story" data-step="4">
                     <h2 class="story__lead">A Holistic View: Interconnected Expertise</h2>
@@ -280,6 +279,19 @@
                 <article class="story" data-story="detect">
                     <p class="story__lead">Signals triaged in the console. Alerts tuned to reduce noise and surface the
                         spike.</p>
+                        <img src="/assets/images/detect.jpg" alt="Exploitation - Vulnerability exploitation and privilege escalation"
+                            loading="lazy" />
+                    <p class="paragraph">
+                        The console lit up at 10:45—a phishing attempt spoofing internal HR. Within minutes, Wireshark flagged anomalous
+                        outbound traffic to an uncategorized external IP. I filtered through the noise, isolating the true signal from a
+                        dozen automated alerts. By 11:15, the full picture emerged: a credential theft attempt with lateral movement toward
+                        the finance database. Every packet told a story, and every anomaly mapped to an adversary's playbook.
+                    </p>
+                    <p class="paragraph">
+                        <strong>Key Detection Metrics:</strong> 12 alerts triaged → 3 true positives identified<br>
+                        <strong>Time to Detection (TTD):</strong> 32 minutes from initial beacon<br>
+                        <strong>Tools Applied:</strong> Wireshark PCAP analysis, SIEM alert correlation, IOC enrichment
+                    </p>
                     <ul class="key-points" id="detect-points"></ul>
                 </article>
             </div>
@@ -297,8 +309,92 @@
             <div class="stage__flow">
                 <h2 id="respond-title" class="visually-hidden">Response narrative</h2>
                 <article class="story" data-story="respond">
-                    <p class="story__lead">Host isolated. Credentials rotated. Indicators blocked. Stakeholders briefed
-                        with clear actions.</p>
+                    <p class="story__lead">Host isolated. Credentials rotated. Indicators blocked. Stakeholders briefed with
+                        clear actions.</p>
+        
+                    <!-- Custom Response Dashboard -->
+                    <div class="custom-response-dashboard">
+                        <div class="dashboard-header">
+                            <h4>🚨 Incident Response Dashboard</h4>
+                            <div class="status-badge status-contained">CONTAINED</div>
+                        </div>
+        
+                        <div class="response-metrics-grid">
+                            <div class="metric">
+                                <div class="metric-value">47m</div>
+                                <div class="metric-label">Time to Contain</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">3/3</div>
+                                <div class="metric-label">Systems Isolated</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">12</div>
+                                <div class="metric-label">IOCs Blocked</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">0</div>
+                                <div class="metric-label">Data Loss</div>
+                            </div>
+                        </div>
+        
+                        <div class="timeline-visual">
+                            <div class="timeline-step active">
+                                <div class="step-time">10:45</div>
+                                <div class="step-desc">Phishing alert detected</div>
+                            </div>
+                            <div class="timeline-step active">
+                                <div class="step-time">11:15</div>
+                                <div class="step-desc">Host isolation initiated</div>
+                            </div>
+                            <div class="timeline-step active">
+                                <div class="step-time">11:32</div>
+                                <div class="step-desc">Containment verified</div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-time">12:00</div>
+                                <div class="step-desc">Forensics complete</div>
+                            </div>
+                        </div>
+        
+                        <div class="response-actions">
+                            <h5>Response Actions Executed:</h5>
+                            <ul>
+                                <li>✅ Network segmentation applied to affected segment</li>
+                                <li>✅ Credentials rotated for 7 compromised accounts</li>
+                                <li>✅ 12 IOCs added to firewall/IDS blocklists</li>
+                                <li>✅ Stakeholder briefing delivered within SLA</li>
+                                <li>🔄 Forensic imaging preserving chain of custody</li>
+                            </ul>
+                        </div>
+        
+                        <div class="framework-reference">
+                            <strong>Framework:</strong> NIST SP 800-61 Rev. 2 |
+                            <strong>SLA Compliance:</strong> 99.9% |
+                            <strong>MITRE ATT&CK:</strong> T1485, T1110
+                        </div>
+                    </div>
+        
+                    <!-- Response Metrics Summary -->
+                    <div class="response-metrics-summary">
+                        <p><strong>Key Response Metrics:</strong></p>
+                        <ul>
+                            <li><strong>MTTD (Mean Time to Detect):</strong> 32 minutes from initial beacon</li>
+                            <li><strong>MTTC (Mean Time to Contain):</strong> 47 minutes from detection</li>
+                            <li><strong>Containment Efficacy:</strong> 100% of affected systems isolated</li>
+                            <li><strong>Communication Latency:</strong> Stakeholders briefed within 15 minutes of containment
+                            </li>
+                            <li><strong>False Positive Rate:</strong> 0% (all escalated alerts were true positives)</li>
+                        </ul>
+                    </div>
+        
+                    <p class="paragraph">
+                        Following NIST SP 800-61 incident handling guidelines, the response prioritized containment to prevent
+                        lateral movement while preserving forensic evidence. Each action was logged with timestamps for audit
+                        compliance, and stakeholders received hourly updates aligning business continuity with technical
+                        remediation.
+                    </p>
+        
                     <ul class="key-points" id="respond-points"></ul>
                 </article>
             </div>
@@ -314,10 +410,137 @@
             <div class="stage__flow">
                 <h2 id="forensics-title" class="visually-hidden">Forensics narrative</h2>
                 <article class="story" data-story="forensics">
-                    <p class="story__lead">Disk triage, keyword hits, and carve summary linked to custody notes.
-                        Findings correlate with network artifacts.</p>
-                    <img src="/assets/images/forensics.jpg"
-                        alt="Digital forensics - Evidence analysis and chain of custody" loading="lazy" />
+                    <p class="story__lead">Disk triage, keyword hits, and carve summary linked to custody notes. Findings
+                        correlate with network artifacts.</p>
+        
+                    <!-- Forensics Timeline Visualization -->
+                    <div class="forensics-timeline">
+                        <h4>🔍 Forensic Investigation Timeline</h4>
+                        <div class="timeline-steps">
+                            <div class="step">
+                                <div class="step-icon">📱</div>
+                                <div class="step-content">
+                                    <strong>Evidence Acquisition (11:45)</strong>
+                                    <p>Disk imaging using write blockers, preserving chain of custody. MD5: 4a3b2c1d...</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-icon">🔎</div>
+                                <div class="step-content">
+                                    <strong>Memory Analysis (12:15)</strong>
+                                    <p>Volatility framework detected malicious process: `svchost.exe` (PID 2844) with anomalous
+                                        network connections.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-icon">📁</div>
+                                <div class="step-content">
+                                    <strong>File Carving (13:30)</strong>
+                                    <p>Recovered 3 deleted files containing C2 configuration and credential dumps from
+                                        `%AppData%\Temp\`.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-icon">🔗</div>
+                                <div class="step-content">
+                                    <strong>Artifact Correlation (14:00)</strong>
+                                    <p>Timeline analysis linked disk artifacts to network IOCs from Wireshark captures
+                                        (192.168.1.100 → C2).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Forensic Tools & Artifacts -->
+                    <div class="forensics-grid">
+                        <div class="forensics-card">
+                            <h5>🧰 Tools Applied</h5>
+                            <div class="tools-list">
+                                <span class="tool-badge">Autopsy</span>
+                                <span class="tool-badge">Volatility</span>
+                                <span class="tool-badge">FTK Imager</span>
+                                <span class="tool-badge">Bulk Extractor</span>
+                                <span class="tool-badge">Wireshark</span>
+                                <span class="tool-badge">RegRipper</span>
+                            </div>
+                        </div>
+        
+                        <div class="forensics-card">
+                            <h5>📊 Key Findings</h5>
+                            <ul>
+                                <li><strong>Initial Access:</strong> Phishing attachment `invoice.pdf.exe`</li>
+                                <li><strong>Persistence:</strong> Registry run key modification</li>
+                                <li><strong>Exfiltration:</strong> Base64 encoded data in HTTP headers</li>
+                                <li><strong>Lateral Movement:</strong> Pass-the-hash technique detected</li>
+                            </ul>
+                        </div>
+                    </div>
+        
+                    <!-- Forensic Evidence Chain -->
+                    <div class="evidence-chain">
+                        <h5>🔗 Evidence Chain of Custody</h5>
+                        <div class="chain-steps">
+                            <div class="chain-step">
+                                <div class="step-number">1</div>
+                                <div class="step-desc">
+                                    <strong>Collection</strong>
+                                    <p>11:45 - Disk imaging with write blocker<br>Witness: Security Team</p>
+                                </div>
+                            </div>
+                            <div class="chain-step">
+                                <div class="step-number">2</div>
+                                <div class="step-desc">
+                                    <strong>Analysis</strong>
+                                    <p>12:15-14:00 - Forensic workstation<br>Hash verification: SHA-256 match</p>
+                                </div>
+                            </div>
+                            <div class="chain-step">
+                                <div class="step-number">3</div>
+                                <div class="step-desc">
+                                    <strong>Documentation</strong>
+                                    <p>14:30 - Evidence report generated<br>References: NIST SP 800-86</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Technical Deep Dive -->
+                    <div class="technical-findings">
+                        <h5>🖥️ Technical Analysis</h5>
+                        <pre>
+                            <code># Memory Analysis Output
+                            $ volatility -f memory.dmp pslist
+                            PID     PPID    ImageFileName
+                            2844    672     svchost.exe
+                            3128    2844    cmd.exe
+                            3256    3128    powershell.exe
+
+                            # Network Connections
+                            $ volatility -f memory.dmp netscan
+                            Local Address          Foreign Address        State
+                            192.168.1.100:443      185.62.58.33:8080     ESTABLISHED
+
+                            # Registry Persistence
+                            [HKLM\Software\Microsoft\Windows\CurrentVersion\Run]
+                            "UpdateService" = "C:\Windows\Temp\svc.exe"
+                            </code>
+                        </pre>
+        
+                        <p class="analysis-note"><strong>Analysis:</strong> The malicious process tree shows privilege
+                            escalation (PID 2844 → 3128) and command execution leading to PowerShell-based data exfiltration.
+                            Registry modification indicates persistence mechanism.</p>
+                    </div>
+        
+                    <img src="/assets/images/forensics.jpg" alt="Digital forensics - Evidence analysis and chain of custody"
+                        loading="lazy" />
+        
+                    <p class="paragraph">
+                        Following ACPO principles, the forensic investigation maintained evidentiary integrity while extracting
+                        actionable intelligence. Timeline analysis revealed the attacker's dwell time (47 minutes), while file
+                        system examination uncovered the initial vector (spear-phishing attachment). All findings were
+                        cross-referenced with network logs to build a complete attack narrative.
+                    </p>
+        
                     <ul class="key-points" id="forensics-points"></ul>
                 </article>
             </div>
